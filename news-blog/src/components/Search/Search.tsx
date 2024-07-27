@@ -21,7 +21,7 @@ const Search = () => {
     <div className='search__container'>
       <input
         className={'header__search ' + (isActive ? ' header__search-active' : '')}
-        placeholder={isActive ? 'Search...' : ''}
+        placeholder={isActive ? 'Enter your search query...' : ''}
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
         value={value}

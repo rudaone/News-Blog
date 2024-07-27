@@ -19,13 +19,13 @@
 
 
 .header__search::placeholder {
-  color: #fff;
+  color: #b8b8b8;
 }
 
 .header__search-active {
-  background-color: #dfdfdf;
+  background-color: #e9e9e9;
   font-size: 18px;
-  color: rgb(87, 87, 87);
+  color: rgb(105, 105, 105);
 }
 
 .cancellion-icon {

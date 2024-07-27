@@ -11,7 +11,7 @@ const CancelIcon = ({className, isActive = false, onClick }: { className : strin
         viewBox="0 0 12 12"
         width="14px"
         height="14px"
-        fill='rgb(87, 87, 87)'
+        fill='rgb(105, 105, 105)'
       >
         <path
           fillRule="evenodd"
