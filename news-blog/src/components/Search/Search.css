@@ -1,8 +1,9 @@
 .search__container {
   display: flex;
   height: 70%;
-  width: 60%;
+  width: 75%;
   align-items: center;
+  margin: 0 32px;
 }
 
 .header__search {
@@ -11,15 +12,20 @@
   outline: none;
   border: none;
   padding: 0 20px;
-  border-radius: 15px;
+  border-radius: 12px;
+  font-size: 18px;
+  color: rgb(87, 87, 87);
 }
+
 
 .header__search::placeholder {
   color: #fff;
 }
 
 .header__search-active {
-  background-color: #e4e4e4;
+  background-color: #dfdfdf;
+  font-size: 18px;
+  color: rgb(87, 87, 87);
 }
 
 .cancellion-icon {
@@ -30,7 +36,7 @@
   align-items: center;
 }
 
-.search-icon{
+.search-icon {
   display: flex;
   justify-content: center;
   align-items: center;
