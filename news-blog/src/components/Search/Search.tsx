@@ -15,7 +15,6 @@ const Search = () => {
 
   const [value, setValue] = useState('');
 
-  const navigate = useNavigate();
 
   return (
     <div className='search__container'>
@@ -28,7 +27,7 @@ const Search = () => {
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
-            navigate(`/posts/search-results?search=${value}`);
+          
           }
         }}
       />
