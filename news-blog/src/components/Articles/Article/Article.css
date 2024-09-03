@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 .article__wrap {
     display: flex;
     width: 352px;
     height: 388px;
-    margin-top: 48px;
+    margin-top: 8px;
     flex-direction: column;
     border-radius: 16px;
     background-color: #ffff;
     transition: 0.3s;
+
 }
 
 .article__wrap:hover {
@@ -23,7 +26,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .article__image-color {
@@ -33,6 +35,14 @@
     background: linear-gradient(133.87deg, rgba(77, 10, 199, 0.6) -10.18%, rgba(145, 46, 242, 0.6) 108.59%);
     border-radius: 16px 16px 0 0;
     transition: 0.3s;
+}
+
+.article__info {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 16px 16px;
+    padding: 32px;
 }
 
 .article__image {
@@ -49,5 +59,20 @@
     font-weight: 500;
     line-height: 24px;
     text-align: left;
-    color: #66666680;
+    color: #31303780;
+}
+
+.article__title {
+    height: 85px;
+    margin-top: 8px;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: left;
+    color: #313037;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

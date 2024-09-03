@@ -6,16 +6,18 @@ const Article = ({ id, title, url, image_url, news_site, summary, published_at, 
     const date = new Date(published_at);
     const monthName = date.toLocaleString('default', { month: 'long' });
     const getDay = date.getDate()
-
-    console.log(monthName)
+    const result = monthName.charAt(0).toUpperCase() + monthName.slice(1)
+    console.log(result)
     return (
         <div className="article__wrap">
             <div className="article__image-wrap">
                 <img src={image_url} className="article__image"></img>
-                <div className="article__image-color">COLOR</div>
+                <div className="article__image-color"></div>
             </div>
-            <div className="article__date">{monthName}{getDay}</div>
-            <div className="article__title">{title}</div>
+            <div className="article__info">
+                <div className="article__date">{result} {getDay}</div>
+                <div className="article__title">{title}</div>
+            </div>
 
         </div>)
 }

@@ -4,6 +4,8 @@ import { useEffect } from "react"
 import { loadArticles } from "../redux/actionCreators/articlesActionCreators"
 import { Article } from "./Article/Article"
 import './Articles.css'
+import { Link } from "react-router-dom"
+import { Sort } from "../Sort"
 
 const Articles = () => {
 
@@ -46,6 +48,12 @@ const Articles = () => {
     return (
         <div className="articles_main-wrap">
             <h1 className="articles_main-title">Blog</h1>
+            <div className="pages-link">
+                <div className="link__to-articles" >Articles</div>
+                <Link className="route-link" to={'/blogs'}><div className="link__to-blogs" >Blogs</div></Link>
+                
+                </div>
+                <Sort/>
             <div className="articles_wrap">
                 {renderArticles()}
             </div>

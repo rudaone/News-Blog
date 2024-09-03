@@ -5,6 +5,8 @@ import { loadArticles } from "../redux/actionCreators/articlesActionCreators"
 import { Blog } from "./Blog/Blog"
 import './Blogs.css'
 import { loadBlogs } from "../redux/actionCreators/blogsActionCreators"
+import { Link } from "react-router-dom"
+import { Sort } from "../Sort"
 
 const Blogs = () => {
 
@@ -47,6 +49,11 @@ const Blogs = () => {
     return (
         <div className="articles_main-wrap">
             <h1 className="articles_main-title">Blog</h1>
+            <div className="pages-link">
+                <Link className="route-link" to={'/articles'}>  <div className="to-articles" >Articles</div></Link>
+                <div className="to-blogs" >Blogs</div>
+            </div>
+            <Sort />
             <div className="articles_wrap">
                 {renderBlogs()}
             </div>

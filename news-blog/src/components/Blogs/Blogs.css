@@ -11,3 +11,46 @@
     align-items: center;
     gap: 32px;
 }
+
+.articles_main-title {
+    width: 1120px;
+    margin-top: 72px;
+    font-family: Inter;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 80px;
+    text-align: left;
+    color: #313037;
+}
+
+.pages-link {
+    margin-top: 40px;
+    width: 1120px;
+    height: 56px;
+    display: flex;
+    gap: 40px;
+
+}
+
+.to-blogs,
+.to-articles {
+    width: 141px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    color: #313037;
+}
+
+.to-blogs {
+    border-bottom: 2px solid black;
+}
+
+
+.route-link {
+    text-decoration: none;
+}
