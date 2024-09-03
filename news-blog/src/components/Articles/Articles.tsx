@@ -1,23 +1,23 @@
 import { useDispatch, useSelector } from "react-redux"
 import { IArticle, IStoreState } from "../../types"
 import { useEffect } from "react"
-import { loadArticles } from "../redux/actionCreators"
+import { loadArticles } from "../redux/actionCreators/articlesActionCreators"
 import { Article } from "./Article/Article"
 import './Articles.css'
 
 const Articles = () => {
-    
+
     const articles = useSelector((state: IStoreState) => state.articles.articles)
     const limit = useSelector((state: IStoreState) => state.articles.limit);
     const currentPage = useSelector((state: IStoreState) => state.articles.currentPage);
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(loadArticles({limit, currentPage}))
+        dispatch(loadArticles({ limit, currentPage }))
     }, [limit, currentPage])
 
     const renderArticles = () => {
         const cards = []
-         for (let i = 0; i < articles.length; i += 1) {
+        for (let i = 0; i < articles.length; i += 1) {
             cards.push(
                 <>
                     {articles.slice(i, i + 1).map((article: IArticle) => (
@@ -32,7 +32,7 @@ const Articles = () => {
                             published_at={article.published_at}
                             updated_at={article.updated_at}
                             featured={article.featured}
-                            
+
                         />
                     ))
                     }
@@ -49,9 +49,9 @@ const Articles = () => {
             <div className="articles_wrap">
                 {renderArticles()}
             </div>
-            
+
         </div>
- )
+    )
 }
 
 

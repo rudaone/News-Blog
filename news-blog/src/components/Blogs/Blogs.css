@@ -1,0 +1,13 @@
+.articles_main-wrap {
+    width: 1120px;
+    margin: 0 auto;
+
+}
+
+.articles_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 32px;
+}

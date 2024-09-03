@@ -1,10 +1,10 @@
-import {IArticle, IArticleState } from '../../types';
+import { IArticle, IArticleState } from '../../../types';
 import {
     SET_ARTICLES,
     SET_ARTICLES_LIMIT,
     SET_CURRENT_PAGE
 
-} from './actionTypes';
+} from '../actionTypes/articlesActionTypes';
 
 
 

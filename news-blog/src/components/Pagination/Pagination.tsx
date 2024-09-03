@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './Pagination.css'
 import { IStoreState } from '../../types'
-import { setCurrentPage } from '../redux/actionCreators'
+import { setCurrentPage } from '../redux/actionCreators/articlesActionCreators'
 
 const Pagination = () => {
     const dispatch = useDispatch()
@@ -22,10 +22,10 @@ const Pagination = () => {
                     className={`second`}
                     onClick={() => dispatch(setCurrentPage(currentPage + 1))}>
                     {currentPage + 1}
-                </span>   
-                
+                </span>
+
                 <span
-                    className={`first`}
+                    className={`third`}
                     onClick={() => dispatch(setCurrentPage(currentPage + 2))}>
                     {currentPage + 2}
                 </span>
