@@ -51,7 +51,7 @@ const Blogs = () => {
             <h1 className="articles_main-title">Blog</h1>
             <div className="pages-link">
                 <Link className="route-link" to={'/articles'}>  <div className="to-articles" >Articles</div></Link>
-                <div className="to-blogs" >Blogs</div>
+                <div className="to-blogs" >News</div>
             </div>
             <Sort />
             <div className="articles_wrap">

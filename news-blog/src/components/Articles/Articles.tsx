@@ -34,7 +34,6 @@ const Articles = () => {
                             published_at={article.published_at}
                             updated_at={article.updated_at}
                             featured={article.featured}
-
                         />
                     ))
                     }
@@ -50,7 +49,7 @@ const Articles = () => {
             <h1 className="articles_main-title">Blog</h1>
             <div className="pages-link">
                 <div className="link__to-articles" >Articles</div>
-                <Link className="route-link" to={'/blogs'}><div className="link__to-blogs" >Blogs</div></Link>
+                <Link className="route-link" to={'/blogs'}><div className="link__to-blogs" >News</div></Link>
                 
                 </div>
                 <Sort/>
@@ -61,6 +60,5 @@ const Articles = () => {
         </div>
     )
 }
-
 
 export { Articles }
