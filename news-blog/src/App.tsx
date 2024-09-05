@@ -6,6 +6,8 @@ import { Blogs } from './components/Blogs';
 import { Pagination } from './components/Pagination/Pagination';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Footer } from './components/Footer/Footer';
+import { SelectedPage } from './components/SelectedPage';
+import { SearchResults } from './components/SearchResults';
 
 function App() {
 
@@ -15,19 +17,18 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to='/articles' />} />
         <Route path='/articles'>
-          <Route index element={<Articles/>} />
-          <Route path=": id" element={<></>} />
-          <Route path='search-results' element={<></>} />
+          <Route index element={<Articles />} />
+          <Route path=":id" element={<SelectedPage/>} />
+          <Route path='search-results' element={<SearchResults/>} />
         </Route>
 
         <Route path='/blogs'>
           <Route index element={<Blogs />} />
-          <Route path=": id" element={<></>} />
-          <Route path='search-results' element={<></>} />
+          <Route path=":id" element={<></>} />
+          <Route path='search-results' element={<> </>} />
         </Route>
       </Routes >
-      <Pagination/>
-      <Footer/>
+      <Footer />
     </>
   );
 }

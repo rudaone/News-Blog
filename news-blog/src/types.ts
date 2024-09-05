@@ -16,6 +16,20 @@ export interface IArticle {
     launches?: [],
     events?: []
 }
+
+export interface ISelectedPage{
+    id: number,
+    title: string,
+    url: string,
+    image_url: string,
+    news_site: string,
+    summary: string,
+    published_at: string,
+    updated_at: string,
+    featured: boolean,
+    launches?: [],
+    events?: []
+}
 export interface IBlog {
     id: number,
     title: string,
@@ -39,6 +53,8 @@ export interface IArticleState {
     articles: IArticle[],
     limit: number,
     currentPage: number,
+    selectedPage: ISelectedPage,
+
 }
 export interface IBlogState {
     blogs: IBlog[],
@@ -48,8 +64,8 @@ export interface IBlogState {
 
 export interface IArticleInfo {
     limit: number,
-    currentPage: number,
-
+    currentPage?: number,
+    search?: string | null,
 }
 
 export interface IBlogInfo {

@@ -1,8 +1,9 @@
-import { IArticle, IArticleState } from '../../../types';
+import { IArticle, IArticleState, ISelectedPage } from '../../../types';
 import {
     SET_ARTICLES,
     SET_ARTICLES_LIMIT,
-    SET_CURRENT_PAGE
+    SET_CURRENT_PAGE,
+    SET_SELECTED_PAGE
 
 } from '../actionTypes/articlesActionTypes';
 
@@ -12,6 +13,8 @@ const initialState = {
     articles: [] as IArticle[],
     limit: 12,
     currentPage: 1,
+    selectedPage: {} as ISelectedPage,
+
 };
 
 const articlesReducer = (state: IArticleState = initialState, action: any) => {
@@ -28,13 +31,20 @@ const articlesReducer = (state: IArticleState = initialState, action: any) => {
                 limit: action.limit
             })
         }
-
         case SET_CURRENT_PAGE: {
             return ({
                 ...state,
                 currentPage: action.currentPage
             })
         }
+
+        case SET_SELECTED_PAGE: {
+            return {
+                ...state,
+                selectedPage: action.selectedPage,
+            };
+        }
+
 
 
         default: {

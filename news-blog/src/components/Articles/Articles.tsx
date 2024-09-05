@@ -6,6 +6,7 @@ import { Article } from "./Article/Article"
 import './Articles.css'
 import { Link } from "react-router-dom"
 import { Sort } from "../Sort"
+import { Pagination } from "../Pagination"
 
 const Articles = () => {
 
@@ -21,7 +22,7 @@ const Articles = () => {
         const cards = []
         for (let i = 0; i < articles.length; i += 1) {
             cards.push(
-                <>
+                <>  
                     {articles.slice(i, i + 1).map((article: IArticle) => (
                         <Article
                             key={article.id}
@@ -56,6 +57,7 @@ const Articles = () => {
             <div className="articles_wrap">
                 {renderArticles()}
             </div>
+            <Pagination />
 
         </div>
     )

@@ -10,14 +10,16 @@ const Article = ({ id, title, url, image_url, news_site, summary, published_at, 
     console.log(result)
     return (
         <div className="article__wrap">
-            <div className="article__image-wrap">
-                <img src={image_url} className="article__image"></img>
-                <div className="article__image-color"></div>
-            </div>
-            <div className="article__info">
-                <div className="article__date">{result} {getDay}</div>
-                <div className="article__title">{title}</div>
-            </div>
+            <Link to={`/articles/${id}`} className="link__article">
+                <div className="article__image-wrap">
+                    <img src={image_url} className="article__image"></img>
+                    <div className="article__image-color"></div>
+                </div>
+                <div className="article__info">
+                    <div className="article__date">{result} {getDay}</div>
+                    <div className="article__title">{title}</div>
+                </div>
+            </Link>
 
         </div>)
 }

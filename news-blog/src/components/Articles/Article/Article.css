@@ -20,6 +20,17 @@
     }
 }
 
+.link__article:active {
+    height: 388px;
+    width: 352px;
+    border-radius: 16px;
+    transition: 0.3s;
+    box-shadow: 0px 12px 40px 5px #0000001a;}
+
+.link__article{
+    text-decoration: none;
+}
+
 .article__image-wrap {
     width: 352px;
     height: 208px;
