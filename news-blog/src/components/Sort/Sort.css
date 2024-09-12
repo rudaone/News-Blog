@@ -1,4 +1,36 @@
 .wrap{
-    background-color: wheat;
-    margin-top: 64px;
+    width: 1120px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 64px        ;
+}
+
+.wrap__sort-date{
+    gap: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sort-day,
+.sort-week,
+.sort-month,
+.sort-year{
+    padding: 16px 40px;
+    border-radius: 4px;
+    background-color: #6C1BDB;
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
+.sort__title{
+    width: 256px;
+    height: 56px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
 }
