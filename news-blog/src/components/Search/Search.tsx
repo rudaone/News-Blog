@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './Search.css'
 import { CancelIcon } from '../Icons/CancelIcon';
-import { useNavigate } from 'react-router-dom';
 import { SearchIcon } from '../Icons/SearchIcon';
+import { useNavigate, Navigate } from 'react-router-dom';
 
 const Search = () => {
   const [isActive, setIsActive] = useState(false);
@@ -12,6 +12,8 @@ const Search = () => {
   const handleOnBlur = () => {
     setIsActive(false);
   };
+  const navigate = useNavigate();
+
 
   const [value, setValue] = useState('');
 
@@ -27,7 +29,7 @@ const Search = () => {
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
-          
+            navigate(`/articles/search-results?search=${value}`);
           }
         }}
       />
