@@ -1,6 +1,6 @@
 import './CancelIcon.css';
 
-const CancelIcon = ({className, isActive = false, onClick }: { className : string; isActive?: boolean; onClick?: () => void; }) => {
+const CancelIcon = ({ xlinkHref, className, isActive = false, onClick }: { className?: string; xlinkHref? : string; isActive?: boolean; onClick?: () => void; }) => {
   return (
     <div
       className={className}
