@@ -89,3 +89,31 @@ export interface IStoreState {
     blogs: IBlogState,
     limit: number,
 }
+
+
+export interface ISignUp {
+    username: string,
+    email: string,
+    password: string,
+    course_group?: number
+}
+
+export interface IUser {
+    username: string,
+    id: number,
+    email: string
+}
+
+export interface IUserState {
+    user: IUser
+}
+
+export interface IActivationInfo {
+    uid: string,
+    token: string
+}
+
+export interface ISignIn {
+    email: string,
+    password: string
+}

@@ -8,6 +8,9 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Footer } from './components/Footer/Footer';
 import { SelectedPage } from './components/SelectedPage';
 import { SearchResults } from './components/SearchResults';
+import { SignIn } from './components/SignIn';
+import { SignUp } from './components/SignUp';
+import { RegistrationConfirm } from './components/RegistrationConfirm';
 
 function App() {
 
@@ -16,12 +19,17 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Navigate to='/articles' />} />
+        <Route path='/sign-up'
+          element={<SignUp/>} />
+        <Route path='/sign-in'
+          element={<SignIn />} />
+        <Route path='activate/:uid/:token'
+          element={<RegistrationConfirm />} />
         <Route path='/articles'>
           <Route index element={<Articles />} />
           <Route path=":id" element={<SelectedPage/>} />
           <Route path='search-results' element={<SearchResults/>} />
         </Route>
-
         <Route path='/blogs'>
           <Route index element={<Blogs />} />
           <Route path=":id" element={<></>} />

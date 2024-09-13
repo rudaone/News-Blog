@@ -1,0 +1,35 @@
+import './RegistrationConfirm.css'
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom'; 
+import { useDispatch } from 'react-redux';
+import { activationSignUp } from '../../components/redux/actionCreators/userActionCreators';
+import { Link } from 'react-router-dom';
+import { isConstructorDeclaration } from 'typescript';
+
+
+const RegistrationConfirm = () => {
+  const { uid = '', token = '' } = useParams(); 
+  const dispatch = useDispatch();
+  console.log(uid, token)
+  useEffect(() => {
+      dispatch(activationSignUp({ uid, token }))
+  }, [uid, token])
+
+    return (
+      <div className='confirmation__page'>
+        <div className='confirm__form-wrapper'>
+          <div className='confirm__form-innertext'>
+            Registration successful! Welcome aboard!<br/>
+            Please check your email.
+          </div>
+          <div className='button_confirm-container'>
+            <Link to='/sign-in' className='button_confirm'>    
+                  Go to sign in
+                </Link>
+          </div>
+        </div>
+      </div>
+    )
+}
+
+export { RegistrationConfirm }

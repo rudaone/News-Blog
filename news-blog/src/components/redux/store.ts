@@ -5,20 +5,18 @@ import { watcherArticles } from './actionCreators/articlesActionCreators';
 import { watcherBlogs } from './actionCreators/blogsActionCreators';
 import { blogsReducer } from './reducers/blogsReducer';
 import { articlesReducer } from './reducers/articlesReducers';
+import { userReducer } from './reducers/userReducer';
+import { watcherUser } from './actionCreators/userActionCreators';
 
-export default createStore(
-    combineReducers({
-        articles: articlesReducer,
-        blogs: blogsReducer,
-    }),
-);
+
 
 const sagaMiddleware = createSagaMiddleware()
 
 function* rootSaga() {
     yield all([
         watcherArticles(),
-        watcherBlogs()
+        watcherBlogs(),
+        watcherUser(),
     ])
 }
 
@@ -26,6 +24,7 @@ const store = createStore(
     combineReducers({
         articles: articlesReducer,
         blogs: blogsReducer,
+        user: userReducer
     }), {},
     applyMiddleware(sagaMiddleware)
 );
