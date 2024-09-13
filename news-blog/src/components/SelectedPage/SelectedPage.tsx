@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import { Arrow } from '../Icons/Arrow';
 import { useState } from 'react';
 import { loadSelectedPage } from '../redux/actionCreators/articlesActionCreators';
+import { Facebook } from '../Icons/Facebook';
+import { Twitter } from '../Icons/Twitter';
 
 
 const SelectedPage = () => {
@@ -26,63 +28,38 @@ const SelectedPage = () => {
 
 
     return (
-        <div className='content__page-wrapper'>
-            <span>Home / Post {selectedPage.id}</span>
-            <div className='upper__wrapper'>
-                <div className='content__page_header'>
-                    <div className='content__page_header-menu'>
-                        <Link to='/books' className='content__page_header-arrow'>
-                            1
-                        </Link>
-                    </div>
-                    <h3 className='content__page_header-title'>{selectedPage.title}</h3>
-                </div>
-                <div className='content__book-info'>
-                    <div className='content__img-container'>
-                        <img className="content__book-image" src={selectedPage.image_url} alt="img name" />
-                    </div>
-                    <div>{selectedPage.summary}</div>
-                    <div className='content__book-infocard'>
-                        <div className='price_rate-row'>
+        <div className='selected-page__wrap'>
+            <span className='selected-page__id'>Home <span className='id__number'>/ Post {selectedPage.id}</span></span>
+            <h1 className='selected-page__title'>{selectedPage.title}</h1>
+            <div className='selected-page__wrap__img'>
+                <img className='selected-page__img' src={selectedPage.image_url} alt="article-image" />
+                <div className="selected-page__image-color"></div>
+            </div>
+            <div className='selected-page__text'>
+                {selectedPage.summary}
+                <div className='selected-page__links'>
+                    <Link className='link-style' to='https://www.facebook.com/'>
+                        <div className='link'>
+                            <Facebook />
                         </div>
-                        <div className='author-container'>
-                            <div className='author'>Authors:</div>
-                        </div>
-                        <div className='publisher-container'>
-                            <div className='publisher'>Publisher:</div>
-                        </div>
-                        <div className='year-container'>
-                            <div className='year'>Year:</div>
-                        </div>
-                        <div className='page-container'>
-                            <div className='page'>Pages:</div>
-                        </div>
+                    </Link>
 
-                    </div>
+                    <Link className='link-style' to='https://x.com/?lang=ru'>
+                        <div className='link'>
+                            <Twitter />
+                        </div>
+                    </Link>
+
+                    <Link className='link-style' to={selectedPage.url}>
+                        <div className='dots-link'>
+                            •••
+                        </div>
+                    </Link>
                 </div>
             </div>
-
-            <div className='middle__wrapper'>
-                <div className='tabs'>
-                </div>
-
-                <div className='social__network'>
-                    <Link to='https://www.facebook.com/'>
-                    </Link>
-
-                    <Link to='https://x.com/?lang=ru'>
-                    </Link>
-
-                    <Link className='dots' to=' '>
-                        <span>•••</span>
-                    </Link>
-                </div>
-
-            </div>
-
-
 
         </div>
+
     )
 }
 
