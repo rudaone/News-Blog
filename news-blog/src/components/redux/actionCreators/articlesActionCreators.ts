@@ -37,7 +37,7 @@ function* fetchLoadArticle(action: any) {
     const { limit, currentPage, search } = action.articleInfo;
     let url = `https://api.spaceflightnewsapi.net/v4/articles/?form=&format=json&limit=${limit}&offset=${(currentPage - 1) * limit}`
     if (search) {
-        url += '&search=' + search
+        url += '&title_contains=' + search
     }
     const resp: Response = yield fetch(url);
     const data: IArticleResponse = yield resp.json();

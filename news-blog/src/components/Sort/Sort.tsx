@@ -12,12 +12,16 @@ const Sort = () => {
                 <button className="sort-year">Year</button>
             </div>
             <div className="sort__title">
-              <span style={{color:'#31303780'}}> Sort: <span>Title</span></span>
-                <select name=""></select>
+                <span style={{ color: '#31303780' }}> Sort: </span>
+
+                <select className='select-az' name="cars" id="cars">
+                    <option className='option-1' value="volvo">Title (A-Z)</option>
+                    <option value="saab">Title (Z-A)</option>
+                </select>
             </div>
         </div>
     )
 
 }
 
-export {Sort}
+export { Sort }

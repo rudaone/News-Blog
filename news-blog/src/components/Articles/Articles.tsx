@@ -7,6 +7,7 @@ import './Articles.css'
 import { Link } from "react-router-dom"
 import { Sort } from "../Sort"
 import { Pagination } from "../Pagination"
+import { title } from "process"
 
 const Articles = () => {
 
@@ -18,11 +19,12 @@ const Articles = () => {
         dispatch(loadArticles({ limit, currentPage }))
     }, [limit, currentPage])
 
+
     const renderArticles = () => {
         const cards = []
         for (let i = 0; i < articles.length; i += 1) {
             cards.push(
-                <>  
+                <>
                     {articles.slice(i, i + 1).map((article: IArticle) => (
                         <Article
                             key={article.id}
@@ -45,15 +47,36 @@ const Articles = () => {
     }
 
 
+    const renderSortArticlesAZ = () => {
+        const sortArticlesAZ: IArticle[] = articles
+        const sortedItemsAZ = [...sortArticlesAZ].sort((a, b) => {
+            return a.title.localeCompare(b.title);
+        });
+        return sortedItemsAZ
+    }
+
+    const renderSortArticlesZA = () => {
+        const sortArticlesZA: IArticle[] = articles
+        const sortedItemsZA = [...sortArticlesZA].sort((b, a) => {
+            return a.title.localeCompare(b.title);
+        });
+        return sortedItemsZA
+    }
+
+
+    
+
+
+
     return (
         <div className="articles_main-wrap">
             <h1 className="articles_main-title">Blog</h1>
             <div className="pages-link">
                 <div className="link__to-articles" >Articles</div>
                 <Link className="route-link" to={'/blogs'}><div className="link__to-blogs" >News</div></Link>
-                
-                </div>
-                <Sort/>
+
+            </div>
+            <Sort />
             <div className="articles_wrap">
                 {renderArticles()}
             </div>

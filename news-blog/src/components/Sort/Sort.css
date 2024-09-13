@@ -1,12 +1,12 @@
-.wrap{
+.wrap {
     width: 1120px;
     height: 56px;
     display: flex;
     justify-content: space-between;
-    margin-top: 64px        ;
+    margin-top: 64px;
 }
 
-.wrap__sort-date{
+.wrap__sort-date {
     gap: 16px;
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@
 .sort-day,
 .sort-week,
 .sort-month,
-.sort-year{
+.sort-year {
     padding: 16px 40px;
     border-radius: 4px;
     background-color: #6C1BDB;
@@ -25,12 +25,29 @@
     border: none;
 }
 
-.sort__title{
+.sort__title {
     width: 256px;
     height: 56px;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    background-color: #fff;
+}
+
+.select-az {
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 30px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    
+}
+
+.option-1{
+    width: 300px;
 }
