@@ -13,3 +13,34 @@ header {
     display: flex;
     margin: 20px 32px;
 }
+
+.sign-in__button {
+    width: 168px;
+    height: 48px;
+    border-radius: 4px;
+    background: linear-gradient(133.87deg, #4D0AC7 -10.18%, #912EF2 108.59%);
+    border: none;
+    color: white;
+    margin: 0 32px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 39.67px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sign-in__link{
+    width: 232px;
+    height: 100%;
+    border-left: 1px solid #F3F3F3 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    text-decoration: none;
+}
+
+.exit__link{
+    text-decoration: none;
+}

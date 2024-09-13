@@ -88,6 +88,7 @@ export interface IStoreState {
     articles: IArticleState,
     blogs: IBlogState,
     limit: number,
+    user: IUserState
 }
 
 
@@ -117,3 +118,5 @@ export interface ISignIn {
     email: string,
     password: string
 }
+
+

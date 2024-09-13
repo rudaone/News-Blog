@@ -4,10 +4,9 @@ import './Article.css'
 const Article = ({ id, title, url, image_url, news_site, summary, published_at, updated_at, featured }: IArticle) => {
 
     const date = new Date(published_at);
-    const monthName = date.toLocaleString('default', { month: 'long' });
+    const monthName = date.toLocaleString('EN', { month: 'long' });
     const getDay = date.getDate()
-    const result = monthName.charAt(0).toUpperCase() + monthName.slice(1)
-    console.log(result)
+    const result = `${monthName.charAt(0).toUpperCase()}${monthName.slice(1)} ${getDay}, ${date.getFullYear()}`
     return (
         <div className="article__wrap">
             <Link to={`/articles/${id}`} className="link__article">
@@ -16,7 +15,7 @@ const Article = ({ id, title, url, image_url, news_site, summary, published_at, 
                     <div className="article__image-color"></div>
                 </div>
                 <div className="article__info">
-                    <div className="article__date">{result} {getDay}</div>
+                    <div className="article__date">{result}</div>
                     <div className="article__title">{title}</div>
                 </div>
             </Link>

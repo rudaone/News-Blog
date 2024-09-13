@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  padding: 0 32px;
+  padding: 0 30px;
   height: 83px;
   font-size: 16px;
   font-weight: 600;
@@ -14,6 +14,7 @@
   align-items: center;
   width: 170px;
   color:rgba(49, 48, 55, 1);
+  gap: 14px;
 }
 
 .username__initials {
@@ -25,7 +26,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  margin-right: 16px;
+}
+
+.username__fullname{
+  width: 60%;
+
 }
 
 @media only screen and (max-width: 414px) {
