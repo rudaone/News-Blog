@@ -7,6 +7,7 @@ import './Blogs.css'
 import { loadBlogs } from "../redux/actionCreators/blogsActionCreators"
 import { Link } from "react-router-dom"
 import { Sort } from "../Sort"
+import { Pagination } from "../Pagination"
 
 const Blogs = () => {
 
@@ -57,7 +58,7 @@ const Blogs = () => {
             <div className="articles_wrap">
                 {renderBlogs()}
             </div>
-
+            <Pagination />
         </div>
     )
 }

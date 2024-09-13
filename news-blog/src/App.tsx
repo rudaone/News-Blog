@@ -32,7 +32,7 @@ function App() {
         </Route>
         <Route path='/blogs'>
           <Route index element={<Blogs />} />
-          <Route path=":id" element={<></>} />
+          <Route path=":id" element={<SelectedPage/>} />
           <Route path='search-results' element={<> </>} />
         </Route>
       </Routes >

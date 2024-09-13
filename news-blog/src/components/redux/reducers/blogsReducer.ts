@@ -1,8 +1,9 @@
-import { IArticleState, IBlog, IBlogState } from '../../../types';
+import { IBlog, IBlogState, ISelectedPage } from '../../../types';
 import {
     SET_BLOGS,
     SET_BLOGS_LIMIT,
-    SET_CURRENT_PAGE
+    SET_CURRENT_PAGE,
+    SET_SELECTED_PAGE
 
 } from '../actionTypes/blogsActionTypes';
 
@@ -12,6 +13,7 @@ const initialState = {
     blogs: [] as IBlog[],
     limit: 12,
     currentPage: 1,
+    selectedPage: {} as ISelectedPage,
 };
 
 const blogsReducer = (state: IBlogState = initialState, action: any) => {
@@ -34,6 +36,13 @@ const blogsReducer = (state: IBlogState = initialState, action: any) => {
                 ...state,
                 currentPage: action.currentPage
             })
+        }
+
+        case SET_SELECTED_PAGE: {
+            return {
+                ...state,
+                selectedPage: action.selectedPage,
+            };
         }
 
 
