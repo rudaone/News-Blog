@@ -63,7 +63,7 @@ const Search = () => {
   };
 
   const handleSearch = () => {
-    navigate(`/search-results?search=${search}`);
+    navigate(`/articles/search-results?search=${search}`);
   };
 
   return (
@@ -91,7 +91,7 @@ const Search = () => {
         {!isActive && (
           <SearchIcon />
         )}
-        {isActive && search && (
+        {isActive && search  && (
           <CancelIcon onClick={handleClearSearch} />
         )}
       </div>
