@@ -8,8 +8,13 @@ const Blog = ({ id, title, url, image_url, news_site, summary, published_at, upd
     const getDay = date.getDate()
     const result = `${monthName.charAt(0).toUpperCase()}${monthName.slice(1)} ${getDay}, ${date.getFullYear()}`
     console.log(result)
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
-        <div className="article__wrap">
+        <div className="article__wrap" onClick={scrollToTop}>
             <Link to={`/blogs/${id}`} className="link__article">
                 <div className="article__image-wrap">
                     <img src={image_url} className="article__image"></img>

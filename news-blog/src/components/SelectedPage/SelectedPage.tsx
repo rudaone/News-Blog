@@ -11,6 +11,7 @@ import { Facebook } from '../Icons/Facebook';
 import { Twitter } from '../Icons/Twitter';
 import { url } from 'inspector';
 import { select } from 'redux-saga/effects';
+import { traceDeprecation } from 'process';
 
 
 const SelectedPage= () => {
@@ -33,7 +34,7 @@ const SelectedPage= () => {
 
     return (
         <div className='selected-page__wrap'>
-            <span className='selected-page__id'>Home <span className='id__number'>/ Post {selectedPage.id}</span></span>
+            <span className='selected-page__id'><Link to={'/articles'} style={{textDecoration:'none', color:'black'}}>Home</Link> <span className='id__number'>/ Post {selectedPage.id}</span></span>
             <h1 className='selected-page__title'>{selectedPage.title}</h1>
             <div className='selected-page__wrap__img'>
                 <img className='selected-page__img' src={selectedPage.image_url} alt="article-image" />
