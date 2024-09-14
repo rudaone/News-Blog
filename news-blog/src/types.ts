@@ -60,6 +60,8 @@ export interface IBlogState {
     blogs: IBlog[],
     limit: number,
     currentPage: number,
+    selectedPage: ISelectedPage,
+
 }
 
 export interface IArticleInfo {

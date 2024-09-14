@@ -9,17 +9,21 @@ import { useState } from 'react';
 import { loadSelectedPage } from '../redux/actionCreators/articlesActionCreators';
 import { Facebook } from '../Icons/Facebook';
 import { Twitter } from '../Icons/Twitter';
+import { url } from 'inspector';
+import { select } from 'redux-saga/effects';
 
 
-const SelectedPage = () => {
+const SelectedPage= () => {
     const { id = '' } = useParams();
-    const selectedPage = useSelector((state: IStoreState) => state.articles.selectedPage);
+    const selectedPage = useSelector((state: IStoreState) => state.articles.selectedPage)
+    const SelectedPageBlog = useSelector((state: IStoreState) => state.blogs.selectedPage)
+
+
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(loadSelectedPage(id))
     }, [])
-
 
 
 

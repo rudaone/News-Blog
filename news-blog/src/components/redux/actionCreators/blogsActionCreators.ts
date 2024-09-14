@@ -49,10 +49,12 @@ function* fetchLoadBlog(action: any) {
 }
 
 function* fetchSelectedPage(action: any) {
-    const resp: Response = yield fetch(`https://api.spaceflightnewsapi.net/v4/blogs/${action.id}`)
-    const selectedPage: IBlog = yield resp.json();
-    yield put(setSelectedPage(selectedPage));
-    console.log(selectedPage)
+    if (window.location.pathname === `/blogs/${action.id}`) {
+        const resp: Response = yield fetch(`https://api.spaceflightnewsapi.net/v4/blogs/${action.id}`)
+        const selectedPage: IBlog = yield resp.json();
+        yield put(setSelectedPage(selectedPage));
+        console.log(selectedPage)
+    }
 }
 
 function* watcherBlogs() {
@@ -61,4 +63,4 @@ function* watcherBlogs() {
 
 }
 
-export { loadBlogs, watcherBlogs, setBlogs, setBlogsLimit, setCurrentPage }
+export { loadBlogs, watcherBlogs, setBlogs, setBlogsLimit, setCurrentPage, loadSelectedPage } 

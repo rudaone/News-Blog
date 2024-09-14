@@ -6,12 +6,11 @@ import { Blogs } from './components/Blogs';
 import { Pagination } from './components/Pagination/Pagination';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Footer } from './components/Footer/Footer';
-import { SelectedPage } from './components/SelectedPage';
 import { SearchResults } from './components/SearchResults';
 import { SignIn } from './components/SignIn';
 import { SignUp } from './components/SignUp';
 import { RegistrationConfirm } from './components/RegistrationConfirm';
-
+import { SelectedPage } from './components/SelectedPage';
 function App() {
 
   return (

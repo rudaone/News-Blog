@@ -45,10 +45,12 @@ function* fetchLoadArticle(action: any) {
 }
 
 function* fetchSelectedPage(action: any) {
-    const resp: Response = yield fetch(`https://api.spaceflightnewsapi.net/v4/articles/${action.id}`)
-    const selectedPage: IArticle = yield resp.json();
-    yield put(setSelectedPage(selectedPage));
-    console.log(selectedPage)
+    if (window.location.pathname === `/articles/${action.id}`){
+        const resp: Response = yield fetch(`https://api.spaceflightnewsapi.net/v4/articles/${action.id}`)
+        const selectedPage: IArticle = yield resp.json();
+        yield put(setSelectedPage(selectedPage));
+        console.log(selectedPage)
+    }
 }
 
 function* watcherArticles() {
