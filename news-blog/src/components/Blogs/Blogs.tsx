@@ -19,6 +19,11 @@ const Blogs = () => {
         dispatch(loadBlogs({ limit, currentPage }))
     }, [limit, currentPage])
 
+    useEffect(() => {
+
+    }, [blogs])
+
+
     const renderBlogs = () => {
         const cards = []
         for (let i = 0; i < blogs.length; i += 1) {

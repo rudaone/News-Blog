@@ -7,6 +7,8 @@ import { blogsReducer } from './reducers/blogsReducer';
 import { articlesReducer } from './reducers/articlesReducers';
 import { userReducer } from './reducers/userReducer';
 import { watcherUser } from './actionCreators/userActionCreators';
+import { watcherSelectedPage } from './actionCreators/selectedPageActionCreators';
+import { selectedPageReducer } from './reducers/selectedPageReducer';
 
 
 
@@ -17,6 +19,7 @@ function* rootSaga() {
         watcherArticles(),
         watcherBlogs(),
         watcherUser(),
+        watcherSelectedPage()
     ])
 }
 
@@ -24,7 +27,8 @@ const store = createStore(
     combineReducers({
         articles: articlesReducer,
         blogs: blogsReducer,
-        user: userReducer
+        user: userReducer,
+        selectedPage: selectedPageReducer
     }), {},
     applyMiddleware(sagaMiddleware)
 );

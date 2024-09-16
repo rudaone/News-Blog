@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Arrow } from '../Icons/Arrow';
 import { useState } from 'react';
-import { loadSelectedPage } from '../redux/actionCreators/articlesActionCreators';
+import { loadSelectedPage } from '../redux/actionCreators/selectedPageActionCreators';
 import { Facebook } from '../Icons/Facebook';
 import { Twitter } from '../Icons/Twitter';
 import { url } from 'inspector';
@@ -16,8 +16,7 @@ import { traceDeprecation } from 'process';
 
 const SelectedPage= () => {
     const { id = '' } = useParams();
-    const selectedPage = useSelector((state: IStoreState) => state.articles.selectedPage)
-    const SelectedPageBlog = useSelector((state: IStoreState) => state.blogs.selectedPage)
+    const selectedPage = useSelector((state: IStoreState) => state.selectedPage.selectedPage)
 
 
     const dispatch = useDispatch();

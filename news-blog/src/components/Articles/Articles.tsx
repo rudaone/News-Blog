@@ -15,9 +15,16 @@ const Articles = () => {
     const limit = useSelector((state: IStoreState) => state.articles.limit);
     const currentPage = useSelector((state: IStoreState) => state.articles.currentPage);
     const dispatch = useDispatch()
+
     useEffect(() => {
         dispatch(loadArticles({ limit, currentPage }))
     }, [limit, currentPage])
+
+    useEffect(() => {
+
+    }, [articles])
+
+
 
 
     const renderArticles = () => {
@@ -47,36 +54,15 @@ const Articles = () => {
     }
 
 
-    const renderSortArticlesAZ = () => {
-        const sortArticlesAZ: IArticle[] = articles
-        const sortedItemsAZ = [...sortArticlesAZ].sort((a, b) => {
-            return a.title.localeCompare(b.title);
-        });
-        return sortedItemsAZ
-    }
-
-    const renderSortArticlesZA = () => {
-        const sortArticlesZA: IArticle[] = articles
-        const sortedItemsZA = [...sortArticlesZA].sort((b, a) => {
-            return a.title.localeCompare(b.title);
-        });
-        return sortedItemsZA
-    }
-
-
-    
-
-
-
     return (
         <div className="articles_main-wrap">
             <h1 className="articles_main-title">Blog</h1>
             <div className="pages-link">
                 <div className="link__to-articles" >Articles</div>
                 <Link className="route-link" to={'/blogs'}><div className="link__to-blogs" >News</div></Link>
-
             </div>
             <Sort />
+
             <div className="articles_wrap">
                 {renderArticles()}
             </div>

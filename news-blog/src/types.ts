@@ -30,6 +30,10 @@ export interface ISelectedPage{
     launches?: [],
     events?: []
 }
+
+export interface ISelectedPageState{
+    selectedPage: ISelectedPage
+}
 export interface IBlog {
     id: number,
     title: string,
@@ -53,14 +57,12 @@ export interface IArticleState {
     articles: IArticle[],
     limit: number,
     currentPage: number,
-    selectedPage: ISelectedPage,
 
 }
 export interface IBlogState {
     blogs: IBlog[],
     limit: number,
     currentPage: number,
-    selectedPage: ISelectedPage,
 
 }
 
@@ -91,6 +93,7 @@ export interface IStoreState {
     blogs: IBlogState,
     limit: number,
     user: IUserState
+    selectedPage:ISelectedPageState,
 }
 
 

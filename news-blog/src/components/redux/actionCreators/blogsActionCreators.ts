@@ -1,6 +1,6 @@
 import { put, takeEvery } from "redux-saga/effects";
-import { IBlog, IBlogInfo, IBlogResponse, ISelectedPage } from "../../../types";
-import { LOAD_BLOGS, SET_BLOGS, SET_BLOGS_LIMIT, SET_CURRENT_PAGE, LOAD_SELECTED_PAGE, SET_SELECTED_PAGE } from "../actionTypes/blogsActionTypes";
+import { IBlog, IBlogInfo, IBlogResponse} from "../../../types";
+import { LOAD_BLOGS, SET_BLOGS, SET_BLOGS_LIMIT, SET_CURRENT_PAGE, SORT_BLOGS} from "../actionTypes/blogsActionTypes";
 
 const setBlogs = (blogs: IBlog[]) => ({
     type: SET_BLOGS,
@@ -23,14 +23,9 @@ const setCurrentPage = (currentPage: number) => ({
     currentPage
 })
 
-const loadSelectedPage = (id: string) => ({
-    type: LOAD_SELECTED_PAGE,
-    id
-})
-
-const setSelectedPage = (selectedPage: ISelectedPage) => ({
-    type: SET_SELECTED_PAGE,
-    selectedPage
+const sortingBlogs = (blogs: IBlog[]) => ({
+    type: SORT_BLOGS,
+    blogs
 })
 
 function* fetchLoadBlog(action: any) {
@@ -48,19 +43,19 @@ function* fetchLoadBlog(action: any) {
 
 }
 
-function* fetchSelectedPage(action: any) {
-    if (window.location.pathname === `/blogs/${action.id}`) {
-        const resp: Response = yield fetch(`https://api.spaceflightnewsapi.net/v4/blogs/${action.id}`)
-        const selectedPage: IBlog = yield resp.json();
-        yield put(setSelectedPage(selectedPage));
-        console.log(selectedPage)
-    }
+
+function* sortBlogs(action: any) {
+    yield put(setBlogs(action.blogs));
 }
+
+
+// //     if {article}
+// // put(setSelectedPage({title: not found}))
 
 function* watcherBlogs() {
     yield takeEvery(LOAD_BLOGS, fetchLoadBlog)
-    yield takeEvery(LOAD_SELECTED_PAGE, fetchSelectedPage)
+    yield takeEvery(SORT_BLOGS, sortBlogs)
 
 }
 
-export { loadBlogs, watcherBlogs, setBlogs, setBlogsLimit, setCurrentPage, loadSelectedPage } 
+export { loadBlogs, watcherBlogs, setBlogs, setBlogsLimit, setCurrentPage, sortingBlogs } 

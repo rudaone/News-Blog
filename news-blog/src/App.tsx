@@ -11,6 +11,7 @@ import { SignIn } from './components/SignIn';
 import { SignUp } from './components/SignUp';
 import { RegistrationConfirm } from './components/RegistrationConfirm';
 import { SelectedPage } from './components/SelectedPage';
+import { Sort } from './components/Sort';
 function App() {
 
   return (
