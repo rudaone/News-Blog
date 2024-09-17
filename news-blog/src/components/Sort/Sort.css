@@ -6,21 +6,28 @@
     margin-top: 64px;
 }
 
-.wrap__sort-date {
+.tabs {
     gap: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.sort-day,
-.sort-week,
-.sort-month,
-.sort-year {
-    padding: 16px 40px;
-    border-radius: 4px;
+.tabs .active {
     background-color: #6C1BDB;
     color: white;
+}
+
+.tabs button {
+    padding: 16px 40px;
+    border-radius: 4px;
+    background: #3130371A;
+    color: #313037;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
     text-decoration: none;
     border: none;
 }
@@ -45,9 +52,9 @@
     font-weight: 500;
     line-height: 24px;
     text-align: left;
-    
+
 }
 
-.option-1{
+.option-1 {
     width: 300px;
 }
