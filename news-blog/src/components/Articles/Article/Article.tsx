@@ -6,6 +6,7 @@ const Article = ({ id, title, url, image_url, news_site, summary, published_at, 
     const date = new Date(published_at);
     const monthName = date.toLocaleString('EN', { month: 'long' });
     const getDay = date.getDate()
+    const getYear = date.getFullYear()
     const result = `${monthName.charAt(0).toUpperCase()}${monthName.slice(1)} ${getDay}, ${date.getFullYear()}`
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -26,4 +27,4 @@ const Article = ({ id, title, url, image_url, news_site, summary, published_at, 
         </div>)
 }
 
-export { Article }
+export { Article}

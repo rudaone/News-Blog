@@ -26,53 +26,40 @@ const SignUp = () => {
         dispatch(signUpUser(other))
     }
 
-    return (
-        <div className='registration__page'>
-       <div className='reg__form-wrapper'>
-          <div className='input__container'>
-            <input 
-                placeholder={'Your name'}
-                className="input"
-                value={formState.username}
-                onChange={(e: any) => handler('username', e.target.value)}
-            />
-
-            <input 
-                placeholder={'Your email'}
-                className="input"
-                value={formState.email}
-                onChange={(e: any) => handler('email', e.target.value)}
-            />
-
-            <input 
-                placeholder={'Your password'}
-                className="input"
-                value={formState.password}
-                onChange={(e: any) => handler('password', e.target.value)}
-            />
-
-            <input 
-                placeholder={'Confirm password'}
-                className="input"
-                value={formState.confirm}
-                onChange={(e: any) => handler('confirm', e.target.value)}
-            />
+     return (
+        <div className='signin__page'>
+            <div className="sign-in__title">
+                <span className='signin__title-text'>Sign In</span>
             </div>
-            <div className='sign_up_button-container'>
-                <button 
-                    className='sign_up-button'
-                    onClick={handleSignUp}       
-                    children='SIGN UP'
-                />
-            </div>
-           
-            <footer className='reg__form-footer'>
-                <div className='reg__form-footer-inner'>
-                    <div className='reg__form-footer-text'>Already have an account?</div>
-                    <Link to="/sign-in" className='reg__form-footer-btn'>Sign in</Link>
+            <div className='signin-wrapper'>
+                <div className='signin__input_container'>
+                    <span className='input-span'>Email</span>
+                    <input
+                        className="input__email"
+                        type='text'
+                        placeholder='Your email'
+                        onChange={(e: any) => handler('email', e.target.value)}
+                    />
+                    
+                    <span className='input-span'>Password</span>
+                    <input
+                        className="input__password"
+                        placeholder='Your password'
+                        type='password'
+                        onChange={(e: any) => handler('password', e.target.value)}
+                    />
+                    <Link to="/sign-up" className='forgot-btn'>Forgot password?</Link>
+
+                    <button className='signin-btn'
+                        onClick={handleSignUp}
+                        children='Sign In'
+                    />
+                        <div className='signin__footer-inner'>
+                            <div className='reg__form-footer-text'>Don't have an account?</div>
+                            <Link to="/sign-up" className='reg__form-footer-link'>Sign up</Link>
+                        </div>
                 </div>
-            </footer>
-        </div>
+            </div>
         </div>
     )
 }

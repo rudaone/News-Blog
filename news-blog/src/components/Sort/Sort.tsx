@@ -12,11 +12,12 @@ const Sort = () => {
     const blogs = useSelector((state: IStoreState) => state.blogs.blogs)
     const dispatch = useDispatch()
 
-    const [activeTab, setActiveTab] = useState('day');
+    const [activeTab, setActiveTab] = useState('sort-day');
 
     const handleTabClick = (tab: string) => {
         setActiveTab(tab);
     };
+
 
 
     const sortOnChange = (e: any
@@ -30,6 +31,7 @@ const Sort = () => {
         }
         if (type === 'za') {
             dispatch(sortingArticles([...articles].sort((b, a) => {
+                console.log(sortingArticles)
                 return a.title.localeCompare(b.title);
             })))
 
@@ -45,6 +47,7 @@ const Sort = () => {
         }
     }
 
+    
     return (
         <div className="wrap">
 
@@ -71,10 +74,10 @@ const Sort = () => {
                 </button>
             </div>
             <div className='tab-content'>
-                {activeTab === 'sort-day' && <p>dday</p>}
-                {activeTab === 'sort-week' && <p>wweek</p>}
-                {activeTab === 'sort-month' && <p>mmonth</p>}
-                {activeTab === 'sort-year' && <p>yyear</p>}
+                {activeTab === 'sort-day' && <p>{ }</p>}
+                {activeTab === 'sort-week' && <p></p>}
+                {activeTab === 'sort-month' && <p></p>}
+                {activeTab === 'sort-year' && <p></p>}
             </div>
 
             <div className="sort__title">

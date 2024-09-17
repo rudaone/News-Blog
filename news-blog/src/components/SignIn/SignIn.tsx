@@ -1,4 +1,4 @@
-
+import './SignIn.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react'
 import { signInUser } from '../../components/redux/actionCreators/userActionCreators'
@@ -19,39 +19,45 @@ const SignIn = () => {
     }
     const handleSignIn = () => {
         const { email, password } = formState;
-        dispatch(signInUser({email, password}))
+        dispatch(signInUser({ email, password }))
     }
 
     return (
         <div className='signin__page'>
+            <div className="sign-in__title">
+                <span className='signin__title-text'>Sign In</span>
+            </div>
             <div className='signin-wrapper'>
                 <div className='signin__input_container'>
-                    <input 
-                        className="input"
+                    <span className='input-span'>Email</span>
+                    <input
+                        className="input__email"
+                        type='text'
                         placeholder='Your email'
                         onChange={(e: any) => handler('email', e.target.value)}
                     />
 
-                    <input 
-                        className="input"
+                    <span className='input-span'>Password</span>
+                    <input
+                        className="input__password"
                         placeholder='Your password'
+                        type='password'
                         onChange={(e: any) => handler('password', e.target.value)}
                     />
                     <Link to="/sign-up" className='forgot-btn'>Forgot password?</Link>
-                    
+
                     <button className='signin-btn'
-                        onClick={handleSignIn}           
-                        children='SIGN IN'
+                        onClick={handleSignIn}
+                        children='Sign In'
                     />
 
-                    <footer className='reg__form-footer'>
-                        <div className='signin__footer-inner'>
-                            <div className='reg__form-footer-text'>Don't have an account?</div>
-                            <Link to="/sign-up" className='reg__form-footer-btn'>Sign up</Link>
-                        </div>
-                    </footer>
+
+                    <div className='signin__footer-inner'>
+                        <div className='reg__form-footer-text'>Don't have an account?</div>
+                        <Link to="/sign-up" className='reg__form-footer-link'>Sign up</Link>
                     </div>
                 </div>
+            </div>
         </div>
     )
 }
