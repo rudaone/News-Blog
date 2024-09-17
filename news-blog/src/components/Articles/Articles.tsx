@@ -18,6 +18,8 @@ const Articles = () => {
         dispatch(loadArticles({ limit, currentPage }))
     }, [limit, currentPage])
 
+
+
     const renderArticles = () => {
         const cards = []
         for (let i = 0; i < articles.length; i += 1) {
@@ -39,11 +41,20 @@ const Articles = () => {
                     ))
                     }
                 </>
+
             )
+            console.log(cards.sort())
         }
         return cards;
     }
 
+    const newArr = articles.map((article: IArticle) => (article.title))
+
+    console.log(newArr)
+
+    const result = newArr.sort()
+
+    console.log(result)
 
     return (
         <div className="articles_main-wrap">
