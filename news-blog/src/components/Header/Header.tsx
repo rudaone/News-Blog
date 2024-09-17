@@ -12,10 +12,11 @@ const handleLogout = () => {
     // window.location.pathname = '';
 }
 
+
 export const Header = () => {
     return (
         <header>
-            <Link to={'/articles'} className='header-logo__link'>
+            <Link to={'/articles'} className='header-logo__link' >
                 <HeaderLogo className='header-logo' />
             </Link>
             <Search />

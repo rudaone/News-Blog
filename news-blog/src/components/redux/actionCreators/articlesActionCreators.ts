@@ -46,7 +46,8 @@ function* sortArticles(action: any) {
 
 function* watcherArticles() {
     yield takeEvery(LOAD_ARTICLES, fetchLoadArticle)
+}function* watcherArticlesSort() {
     yield takeEvery(SORT_ARTICLES, sortArticles)
 }
 
-export { sortingArticles, loadArticles, watcherArticles, setArticles, setArticlesLimit, setCurrentPage}
+export { sortingArticles, watcherArticlesSort, loadArticles, watcherArticles, setArticles, setArticlesLimit, setCurrentPage}

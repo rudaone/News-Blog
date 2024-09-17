@@ -57,12 +57,14 @@ export interface IArticleState {
     articles: IArticle[],
     limit: number,
     currentPage: number,
+    selectedPage: ISelectedPage,
 
 }
 export interface IBlogState {
     blogs: IBlog[],
     limit: number,
     currentPage: number,
+    selectedPage: ISelectedPage,
 
 }
 

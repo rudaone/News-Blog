@@ -2,16 +2,17 @@ import './Sort.css'
 
 import { IArticle, IStoreState } from '../../types'
 import { useDispatch, useSelector } from 'react-redux'
-import { sortingArticles } from '../redux/actionCreators/articlesActionCreators'
+import { loadArticles, setArticles, sortingArticles } from '../redux/actionCreators/articlesActionCreators'
 import { log } from 'console'
 import { sortingBlogs } from '../redux/actionCreators/blogsActionCreators'
+import { useEffect } from 'react'
 
 const Sort = () => {
     const articles = useSelector((state: IStoreState) => state.articles.articles)
     const blogs = useSelector((state: IStoreState) => state.blogs.blogs)
     const dispatch = useDispatch()
 
-    
+
 
 
     const sortOnChange = (e: any
@@ -25,6 +26,7 @@ const Sort = () => {
         }
         if (type === 'za') {
             dispatch(sortingArticles([...articles].sort((b, a) => {
+                console.log(sortingArticles)
                 return a.title.localeCompare(b.title);
             })))
 
@@ -36,6 +38,7 @@ const Sort = () => {
         }if (type === 'za') {
             dispatch(sortingBlogs([...blogs].sort((b, a) => {
                 return a.title.localeCompare(b.title);
+
             })))
         }
     }
@@ -52,7 +55,6 @@ const Sort = () => {
                 <span style={{ color: '#31303780' }}> Sort: </span>
 
                 <select className='select-az' name="cars" id="cars" onChange={(e) => sortOnChange(e)}>
-                    <option className='az' value="Sort by...">Sort by...</option>
                     <option className='az' value="az">Title (A-Z)</option>
                     <option className='az' value="za">Title (Z-A)</option>
                 </select>

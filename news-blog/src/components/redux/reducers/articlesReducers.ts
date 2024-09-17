@@ -46,7 +46,6 @@ const articlesReducer = (state: IArticleState = initialState, action: any) => {
         }
 
 
-
         default: {
             return state;
         }

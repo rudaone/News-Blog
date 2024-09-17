@@ -62,7 +62,6 @@ const Articles = () => {
                 <Link className="route-link" to={'/blogs'}><div className="link__to-blogs" >News</div></Link>
             </div>
             <Sort />
-
             <div className="articles_wrap">
                 {renderArticles()}
             </div>
