@@ -11,6 +11,7 @@ const SignIn = () => {
         email: '',
         password: ''
     })
+
     const handler = (key: string, value: string) => {
         setFormState(prev => ({
             ...prev,
@@ -25,6 +26,7 @@ const SignIn = () => {
     return (
         <div className='signin__page'>
             <div className="sign-in__title">
+                <Link className='signin__title-link' to='/articles'>Back to home</Link>
                 <span className='signin__title-text'>Sign In</span>
             </div>
             <div className='signin-wrapper'>
@@ -35,6 +37,12 @@ const SignIn = () => {
                         type='text'
                         placeholder='Your email'
                         onChange={(e: any) => handler('email', e.target.value)}
+                        onKeyDown={(e: any) => {
+                            if (e.key === "Enter") {
+                                const { email, password } = formState;
+                                dispatch(signInUser({ email, password }))
+                            }
+                        }}
                     />
 
                     <span className='input-span'>Password</span>
@@ -43,18 +51,25 @@ const SignIn = () => {
                         placeholder='Your password'
                         type='password'
                         onChange={(e: any) => handler('password', e.target.value)}
+                        onKeyDown={(e: any) => {
+                            if (e.key === "Enter") {
+                                const { email, password } = formState;
+                                dispatch(signInUser({ email, password }))
+                            }
+                        }}
                     />
                     <Link to="/sign-up" className='forgot-btn'>Forgot password?</Link>
 
                     <button className='signin-btn'
                         onClick={handleSignIn}
                         children='Sign In'
+
                     />
 
 
                     <div className='signin__footer-inner'>
-                        <div className='reg__form-footer-text'>Don't have an account?</div>
-                        <Link to="/sign-up" className='reg__form-footer-link'>Sign up</Link>
+                        <div className='reg__form-footer-text'>Don't have an account? <Link to="/sign-up" className='reg__form-footer-link'>Sign up</Link></div>
+                        
                     </div>
                 </div>
             </div>

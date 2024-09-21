@@ -69,7 +69,7 @@ export interface IBlogState {
 }
 
 export interface IArticleInfo {
-    limit: number,
+    limit?: number,
     currentPage?: number,
     search?: string | null,
 }
@@ -92,6 +92,7 @@ export interface IBlogResponse {
 
 export interface IStoreState {
     articles: IArticleState,
+    total: string;
     blogs: IBlogState,
     limit: number,
     user: IUserState

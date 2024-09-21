@@ -1,4 +1,4 @@
-.signin__page {
+.signup__page {
     height: 80vh;
     margin: 0 auto;
     display: flex;
@@ -7,18 +7,20 @@
     flex-direction: column;
 }
 
-.sign-in__title {
+.sign-up__title {
     display: flex;
+    flex-direction: column;
     width: 1120px;
     font-family: Inter;
     font-weight: 700;
     font-size: 56px;
     color: #313037;
+    gap: 32px;
 }
 
-.signin-wrapper {
+.signup-wrapper {
     width: 624px;
-    height: 472px;
+    height: 642px;
     padding: 40px;
     background-color: #fff;
     border-radius: 16px;
@@ -26,7 +28,7 @@
 
 }
 
-.signin__input_container {
+.signup__input_container {
     display: flex;
     flex-direction: column;
 
@@ -102,7 +104,7 @@
     margin-top: 16px;
 }
 
-.signin-btn {
+.signup-btn {
     width: 544px;
     height: 56px;
     padding: 16px 32px 16px 32px;
@@ -120,7 +122,7 @@
     transition: 0.3s;
 }
 
-.signin-btn:hover {
+.signup-btn:hover {
     background-color: #912EF2;
 }
 
@@ -144,9 +146,19 @@
     text-decoration: none;
 }
 
-.signin__footer-inner {
+.signup__footer-inner {
     width: 243px;
     display: flex;
     margin: 0 auto;
     margin-top: 24px;
+}
+
+.signup__title-link {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-decoration: none;
+    color: #313037;
 }

@@ -9,7 +9,7 @@ const handleLogout = () => {
     localStorage.removeItem('access');
     localStorage.removeItem('refresh');
     console.log("User after logout:");
-    // window.location.pathname = '';
+    window.location.pathname = '/sign-in';
 }
 
 
@@ -21,11 +21,11 @@ export const Header = () => {
             </Link>
             <Search />
             {localStorage.getItem('access') ? (
-                <Link className='exit__link' to='/articles' onClick={handleLogout}><Username /></Link>
+                <Link className='exit__link' to='/articles' onClick={handleLogout}><Username /></Link> 
             ) : (
-                <Link className='sign-in__link' to='/sign-in'> <button className='sign-in__button'>sign in</button></Link>
+                    <Link className='sign-in__link' to='/sign-in'> <button className='sign-in__button'>sign in</button> </Link>
             )}
-
+        
         </header>
     )
 

@@ -1,0 +1,38 @@
+.slider {
+  padding-top: 72px;
+  border-top: 1px solid #3130371A;
+  margin-top: 72px;
+}
+.slider-body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1352px;
+  overflow: hidden;
+}
+
+.slider-line {
+  width: 1120px;
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  height: 455px;
+  padding: 0;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow-block {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.slider-item {
+  width: 352px;
+}
