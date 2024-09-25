@@ -1,15 +1,20 @@
 .slider {
-  padding-top: 72px;
-  border-top: 1px solid #3130371A;
-  margin-top: 72px;
+  margin: 0 auto;
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+.slider__wraper{
+  width: 1200px;
 }
 .slider-body {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  max-width: 1352px;
+  max-width: 1552px;
   overflow: hidden;
+  padding: 0 40px;
 }
 
 .slider-line {
@@ -18,7 +23,11 @@
   display: flex;
   gap: 32px;
   height: 455px;
+  margin: 0 auto;
   padding: 0;
+  padding-top: 72px;
+  border-top: 1px solid #3130371A;
+  margin: 72px 0;
 }
 
 .slider-header {

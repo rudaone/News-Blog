@@ -1,11 +1,7 @@
-import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-
-import { IStoreState } from '../../types';
-import './BookSlider.css';
+import { Link } from 'react-router-dom'; 
+import './SimilarArticles.css';
 import { IArticle } from '../../types';
 import { Article } from '../Articles/Article';
 import { loadArticles } from '../redux/actionCreators/articlesActionCreators';
@@ -15,11 +11,8 @@ interface ArticleSliderProps {
 }
 
 const ArticleSimilar: React.FC<ArticleSliderProps> = ({ articles }) => {
-  const article = useSelector((state: IStoreState) => state.articles.articles);
   const dispatch = useDispatch();
-  // const refreshPage = (id:any) => {
-  //   window.location.pathname = `articles/${id}`
-  // }
+
 
   useEffect(() => {
     dispatch(loadArticles({}))
@@ -31,7 +24,8 @@ const ArticleSimilar: React.FC<ArticleSliderProps> = ({ articles }) => {
       <div className="slider-body">
         <div className="slider-wrapper">
           <ul className="slider-line">
-            {articles.map(article => (
+            {articles.slice(0,3).map(article => (
+              
               <li key={article.id} className="slider-item">
                 <Link to={`articles/${article.id}`} style={{ textDecoration: 'none' }}>
                   <Article
