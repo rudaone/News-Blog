@@ -19,22 +19,23 @@ const Pagination = () => {
             </button>
 
             <div className='currentpage__wrapper'>
-                <span
+                <button
                     className={`first`}
+                    onClick={() => dispatch(setCurrentPage(currentPage-1))}
+                    disabled={currentPage === 1}>
+                    {currentPage-1}
+                </button>
+                <button
+                    className={`second`}
                     onClick={() => dispatch(setCurrentPage(currentPage))}>
                     {currentPage}
-                </span>
-                <span
-                    className={`second`}
+                </button>
+
+                <button
+                    className={`third`}
                     onClick={() => dispatch(setCurrentPage(currentPage + 1))}>
                     {currentPage + 1}
-                </span>
-
-                <span
-                    className={`first`}
-                    onClick={() => dispatch(setCurrentPage(currentPage + 2))}>
-                    {currentPage + 2}
-                </span>
+                </button>
             </div>
 
 

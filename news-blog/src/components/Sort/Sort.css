@@ -13,9 +13,18 @@
     align-items: center;
 }
 
+.tabs button:hover {
+    background-color: #3130374D;
+}
+
 .tabs .active {
     background-color: #6C1BDB;
     color: white;
+    transition: 0.3s;
+}
+
+.tabs .active:hover {
+    background-color: #6C1BDB;
 }
 
 .tabs button {
@@ -30,6 +39,7 @@
     text-align: left;
     text-decoration: none;
     border: none;
+    transition: 0.3s;
 }
 
 .sort__title {

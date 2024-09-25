@@ -24,9 +24,10 @@
     width: 352px;
     border-radius: 16px;
     transition: 0.3s;
-    box-shadow: 0px 12px 40px 5px #0000001a;}
+    box-shadow: 0px 12px 40px 5px #0000001a;
+}
 
-.link__article{
+.link__article {
     text-decoration: none;
 }
 
@@ -59,6 +60,7 @@
     width: 352px;
     height: 208px;
     display: flex;
+    object-fit: cover;
     border-radius: 16px 16px 0 0;
 }
 

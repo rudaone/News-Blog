@@ -5,3 +5,7 @@ svg {
 .right {
     transform: rotate(180deg);
 }
+.right,
+.left{
+        transition: 0.3s;
+}

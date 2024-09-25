@@ -29,6 +29,7 @@ const SignUp = () => {
     return (
         <div className='signup__page'>
             <div className="sign-up__title">
+                <Link className='signin__title-link' to='/articles'>Back to home</Link>
                 <span className='signup__title-text'>Sign Up</span>
             </div>
             <div className='signup-wrapper'>
