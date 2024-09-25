@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom"
 import { useEffect } from "react"
 import { loadArticles } from "../redux/actionCreators/articlesActionCreators"
 import { Pagination } from "../Pagination"
+import { Search } from "../Search/Search"
 
 const SearchResults = () => {
     const articles = useSelector((state: IStoreState) => state.articles.articles)
@@ -24,7 +25,7 @@ const SearchResults = () => {
         const params = new URLSearchParams(window.location.search);
         console.log(params.get('search'));
         dispatch(loadArticles({ limit, currentPage, search: params.get('search') }))
-    }, [limit, currentPage])
+    }, [limit, currentPage, search])
 console.log(articles)
     return (
         <>
